@@ -91,9 +91,10 @@ namespace EatonPathfinder
             Console.WriteLine("Available items:");
             Console.WriteLine();
 
-            foreach ((var item, var inputIndex) in inventory.Items.Select((item, index) => (item, index + 1)))
+            for (int itemIndex = 0; itemIndex < inventory.Items.Count; itemIndex++)
             {
-                Console.WriteLine($"[{inputIndex}] - {item.Name}");
+                var displayIndex = itemIndex + 1;
+                Console.WriteLine($"[{displayIndex}] - {inventory.Items[itemIndex].Name}");
             }
         }
 
