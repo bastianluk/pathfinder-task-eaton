@@ -17,7 +17,7 @@ namespace EatonPathfinder
                 ParseLine(parserOptions, line, items, currentPath);
             }
 
-            var inventory = Inventory.Create(items);
+            var inventory = Inventory.CreateNonEmpty(items);
 
             return inventory;
         }
@@ -41,7 +41,7 @@ namespace EatonPathfinder
                 return;
             }
 
-            throw new InvalidDataException($"Invalid line in file: \"{line}\". Missing expected separator.");
+            throw new InvalidDataException($"Invalid line in file: \"{line}\". Missing expected separator ({nameof(ParserOptions.ItemSeparator)}: \"{options.ItemSeparator}\"; {nameof(ParserOptions.StepSeparator)}: \"{options.StepSeparator}\").");
         }
 
         private static Item ParseItem(ParserOptions options, string line, int itemIndex, IReadOnlyList<string> currentPath)

@@ -9,7 +9,7 @@
 
         public IReadOnlyList<Item> Items { get; }
 
-        public static Inventory Create(IReadOnlyList<Item> items)
+        public static Inventory CreateNonEmpty(IReadOnlyList<Item> items)
         {
             if (items is null || items.Count is 0)
             {
