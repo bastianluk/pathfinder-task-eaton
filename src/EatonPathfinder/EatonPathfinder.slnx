@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="../EatonPathfinder.Tests/EatonPathfinder.Tests.csproj" />
-  <Project Path="EatonPathfinder.csproj" />
-</Solution>
